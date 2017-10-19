@@ -1,10 +1,10 @@
 # ImageX Demo
 Central repository for the installation of the imagex demonstrator
 
-##What this does
+## What this does
 This is a set of scripts that will clone the necessary github repos and docker images to run the ImageX demonstration.
 
-##Installation
+## Installation
 
 Prerequisites:  Docker
 Optional:  node, nginx
