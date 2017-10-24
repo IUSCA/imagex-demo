@@ -13,7 +13,7 @@ This is a set of scripts that will pull the necessary docker images to run the I
 - Run the remaining scripts inside this folder (except the imagex-importer-batch.sh)
 - Navigate to http://localhost to verify the installation
 
-Note that this repository does not include the astronomical needed for the demo displays.  If you'd like a copy of the demo dataset, please email youngmd@iu.edu
+Note that this repository does not include the astronomical images needed for the demo displays.  If you'd like a copy of the demo dataset, please email youngmd@iu.edu
 
 ## Associated Github repos
 
