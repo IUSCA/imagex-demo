@@ -1,0 +1,45 @@
+'use strict';
+
+module.exports = function(fs, winston) {
+    var exports = {};
+
+    exports.data = {
+        paths: {
+            "/imagexdata/imagex": {
+                path: "/opt/sca/imagex-tiles",
+                allow_origin: "*",
+                public_key: fs.readFileSync('/opt/sca/config/imagex.pub','utf8'),
+                scope: "imagex", //scope to check for authorization
+            }
+        }
+    }
+
+    exports.express = {
+        port: 8081,
+        host: "localhost"
+    };
+
+    exports.logger = {
+        winston: {
+            transports: [
+                //display all logs to console
+                new winston.transports.Console({
+                    timestamp: function() {
+                        return Date.now(); //show time in unix timestamp
+                    },
+                    level: 'debug',
+                    colorize: true
+                }),
+
+                //store all warnings / errors in error.log
+                new (winston.transports.File)({
+                    filename: 'error.log',
+                    level: 'warn'
+                })
+            ]
+        }
+    }
+
+    return exports;
+};
+
