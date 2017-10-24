@@ -2,14 +2,20 @@
 Central repository for the installation of the imagex demonstrator
 
 ## What this does
-This is a set of scripts that will clone the necessary github repos and docker images to run the ImageX demonstration.
+This is a set of scripts that will pull the necessary docker images to run the ImageX demonstration.
 
 ## Installation
 
 * Prerequisites:  Docker
-* Optional:  node, nginx
 
 - Clone this repo
-- Run setup.sh as root
-- Edit the config scripts for each ImageX component to suit your needs
-- Optionally, use the provided imagex-nginx.conf file to configure nginx to expose each container.  This file assumes the ImageX components are using the default port numbers in the example config scripts.  
+- Inside the startup folder, run the docker-network.sh script, followed by imagex-mongodb.sh
+- Run the remaining scripts inside this folder (except the imagex-importer-batch.sh)
+- Navigate to http://localhost to verify the installation
+
+## Associated Github repos
+
+- https://github.com/IUSCA/imagex-ui
+- https://github.com/IUSCA/imagex-api
+- https://github.com/IUSCA/imagex-data
+- https://github.com/IUSCA/imagex-importer
