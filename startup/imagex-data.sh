@@ -3,7 +3,7 @@
 CONTNAME=imagex-data
 NETNAME=imgxnet
 
-#docker pull imagex/imagex-api
+docker pull imagexdemo/imagex-data
 # docker network rm imgxnet
 if docker network list | grep ${NETNAME}
 then
@@ -20,7 +20,7 @@ docker run \
         --ip="172.18.0.5" \
         -v `pwd`/../imagex-tiles:/opt/sca/imagex-tiles \
         -v `pwd`/../imagex-config/data:/opt/sca/config \
-        -d imagex-data
+        -d imagexdemo/imagex-data
 
 docker ps -a
 

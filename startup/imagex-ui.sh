@@ -3,8 +3,9 @@
 CONTNAME=imagex-ui
 NETNAME=imgxnet
 
-#docker pull imagex/imagex-api
-# docker network rm imgxnet
+
+docker pull imagexdemo/imagex-ui
+
 if docker network list | grep ${NETNAME}
 then
 echo "Found Network"
@@ -19,7 +20,7 @@ docker run \
         --network ${NETNAME} \
         --ip="172.18.0.4" \
         -v `pwd`/../imagex-ui/uploads:/opt/sca/imagex-ui/uploads \
-        -d imagex-ui
+        -d imagexdemo/imagex-ui
 
 
 docker ps -a

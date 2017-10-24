@@ -2,8 +2,10 @@
 
 NETNAME=imgxnet
 CONTNAME=imgx_batch
-#docker pull imagex/imagex-api
-# docker network rm imgxnet
+
+
+docker pull imagexdemo/imagex-importer
+
 if docker network list | grep ${NETNAME}
 then
 echo "Found Network"
@@ -18,7 +20,7 @@ docker run \
         -v `pwd`/../imagex-config/importer:/opt/sca/config \
         -v `pwd`/../imagex-tiles:/opt/sca/imagex-tiles \
         -v /path/to/import/dir:/opt/sca/batch_import \
-        -d imagex-importer \
+        -d imagexdemo/imagex-importer \
         bash -c "python preprocess.py /opt/sca/batch_import"
 
 docker ps -a

@@ -3,7 +3,7 @@
 CONTNAME=imagex-api
 NETNAME=imgxnet
 
-#docker pull imagex/imagex-api
+docker pull imagexdemo/imagex-api
 # docker network rm imgxnet
 if docker network list | grep ${NETNAME}
 then
@@ -18,7 +18,7 @@ docker run \
         --name ${CONTNAME}  \
 	    --network ${NETNAME} \
         --ip="172.18.0.3" \
-	    -d imagex-api
+	    -d imagexdemo/imagex-api
 
 
 docker ps -a

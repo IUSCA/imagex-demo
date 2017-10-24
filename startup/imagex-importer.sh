@@ -3,8 +3,8 @@
 CONTNAME=imagex-importer
 NETNAME=imgxnet
 
-#docker pull imagex/imagex-api
-# docker network rm imgxnet
+docker pull imagexdemo/imagex-importer
+
 if docker network list | grep ${NETNAME}
 then
 echo "Found Network"
@@ -21,7 +21,7 @@ docker run \
         -v `pwd`/../imagex-ui/uploads:/opt/sca/uploads \
         -v `pwd`/../imagex-config/importer:/opt/sca/config \
         -v `pwd`/../imagex-tiles:/opt/sca/imagex-tiles \
-        -d imagex-importer
+        -d imagexdemo/imagex-importer
 
 docker ps -a
 

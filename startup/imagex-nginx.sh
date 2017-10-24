@@ -4,7 +4,7 @@ CONTNAME=imagex-nginx
 NETNAME=imgxnet
 
 docker pull nginx
-# docker network rm imgxnet
+
 if docker network list | grep ${NETNAME}
 then
 echo "Found Network"
